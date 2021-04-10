@@ -3,12 +3,13 @@
 
 <template>
   <div>
-    <div class="item">
+    <NavBar />
+    <div class="item nav-elem">
       <h2>Dodaj nowe ToDo:</h2>
       <input type="text" name="" id="" placeholder="todo" v-model="newItem">
       <button class="item" @click="addItem">add todo</button>
     </div>
-    <TodoItem v-for="item in items" :key="item.id" :item="item" @onItemClosed="closeTodo" />
+    <TodoItem class="nav-elem" v-for="item in items" :key="item.id" :item="item" @onItemClosed="closeTodo" />
     <MainComponent :closed="closed" :pending="pending" @fuckThisShit="setBGColor" />
   </div>
 </template>
@@ -17,10 +18,13 @@
 
 import TodoItem from './TodoItem.vue'
 import MainComponent from './MainComponent.vue'
+import NavBar from './NavBarComponent'
+
 export default {
     components: {
         TodoItem,
-        MainComponent
+        MainComponent,
+        NavBar
     },
   data() {
     return {

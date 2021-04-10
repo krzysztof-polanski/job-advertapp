@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Todo App</h1>
+    <h1>Job Advertisements App</h1>
     <TodoApp />
   </div>
 </template>
