@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h2 class="closed-box">Do zrobienia: {{ pending }}</h2>
         <h2 class="closed-box" @click="colorBG">Zrobione: {{ closed }}</h2>
     </div>
@@ -11,7 +11,7 @@ export default {
     methods: {
         colorBG() {
             const box = this.closed
-            this.$emit('fuckThisShit', box)
+            this.$emit('doSomething', box)
         }
     }
 }
@@ -26,5 +26,9 @@ export default {
         border: 2px solid lightseagreen;
         text-align: center;
         vertical-align: middle;
+    }
+    .container {
+        display: flex;
+        justify-content: baseline;
     }
 </style>

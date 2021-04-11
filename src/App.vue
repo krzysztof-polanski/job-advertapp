@@ -1,16 +1,16 @@
 <template>
   <div>
     <h1>Job Advertisements App</h1>
-    <TodoApp />
+    <AdvertApp />
   </div>
 </template>
 
 <script>
-import Todo from './components/TodoApp.vue'
+import Advert from './components/AdvertApp.vue'
 
 export default ({
   components: {
-    TodoApp: Todo
+    AdvertApp: Advert
   }
 })
 </script>

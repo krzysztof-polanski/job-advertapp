@@ -1,10 +1,15 @@
 <template>
-        <a :href="nav.href">{{ nav.name }}</a>
+        <a @click='isMainPage' :href="nav.href">{{ nav.name }}</a>
 </template>
 
 
 <script>
 export default {
-    props: ['nav']
+    props: ['nav'],
+    methods: {
+        isMainPage() {
+            this.$emit('isMainPage', this.nav.id)
+        }
+    }
 }
 </script>
