@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       adverts: [
-        { title: 'Zrobić zakupy', salaryRange: '500-5000', description: 'BLA AND BLA MORE', completed: false, id: 1},
+        { title: 'Zrobić zakupy', salaryRange: '500-5000', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dolore est similique vel ipsam ipsa libero tempore cum hic error ducimus numquam voluptatum deleniti soluta?', completed: false, id: 1},
         { title: 'Czekać na żonę', salaryRange: '1000-25000', description: 'BLABLABLA', completed: false, id: 2}
       ],
       newId: 3,
