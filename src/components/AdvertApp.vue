@@ -12,10 +12,10 @@
 
 <script>
 
-import AdvertItem from './AdvertItem.vue'
+import AdvertItem from './AdvertComponents/AdvertItem.vue'
 import MainComponent from './MainComponent.vue'
-import NavBar from './NavBarComponent'
-import AddAdvertisementForm from './AddAdvertisementFormComponent'
+import NavBar from './NavigationComponents/NavBarComponent.vue'
+import AddAdvertisementForm from './AdvertComponents/AddAdvertisementFormComponent.vue'
 
 export default {
     components: {
