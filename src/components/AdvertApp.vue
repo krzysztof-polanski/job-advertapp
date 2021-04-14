@@ -3,8 +3,7 @@
 
 <template>
   <div>
-    <NavBar />
-    <AddAdvertisementForm @newAdvertAdded="addAdvert" />
+    <AddAdvertisementForm @newAdvertAdded="addAdvert" display="none" />
     <AdvertItem class="nav-elem" v-for="advert in adverts" :key="advert.id" :advert="advert" @onAdvertClosed="closeAdvert" />
     <MainComponent :closed="closed" :pending="pending" />
   </div>
@@ -14,14 +13,12 @@
 
 import AdvertItem from './AdvertComponents/AdvertItem.vue'
 import MainComponent from './MainComponent.vue'
-import NavBar from './NavigationComponents/NavBarComponent.vue'
 import AddAdvertisementForm from './AdvertComponents/AddAdvertisementFormComponent.vue'
 
 export default {
     components: {
         AdvertItem,
         MainComponent,
-        NavBar,
         AddAdvertisementForm
     },
   data() {
@@ -68,4 +65,12 @@ export default {
     opacity: 0.5;
     text-decoration: line-through;
   }
+  .nav-elem {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: fantasy;
+        /* display: inline-block; */
+        padding: 10px;
+        letter-spacing: 3px;
+    }
 </style>
