@@ -4,7 +4,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Ogłoszenia</router-link> |
-      <router-link to="/about">Użytkownicy</router-link>
+      <router-link to="/registration">Zarejestruj/Zaloguj się</router-link>
     </div>
     <keep-alive><router-view/></keep-alive>
   </div>

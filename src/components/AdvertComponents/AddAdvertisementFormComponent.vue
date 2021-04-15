@@ -2,18 +2,20 @@
 
 <template>
     <div class="advert nav-elem">
-        <h2 @click="toggleShow" class="advert">Dodaj <i class="fas fa-plus"></i> Ogłoszenie</h2>
-        <form v-if="show" @submit.prevent="addAdvert">
-          <label for="">Tytuł: </label>
-          <input type="text" placeholder="advertisement" v-model="newAdvert.title" required><br>
-          <label for="">Minimalna stawka: </label>
-          <input type="number" v-model="newAdvert.minSalary" min="0" required><br>
-          <label for="">Maksymalna stawka: </label>
-          <input type="number" v-model="newAdvert.maxSalary" min="0" required><br>
-          <label for="">Opis zadania: </label>
-          <textarea placeholder="Description" v-model="newAdvert.description" rows="4" cols="50"></textarea><br>
-          <button class="advert">add advertisement</button>
-        </form>
+        <h2 @click="show = !show" class="advert">{{ h2Text }} <i class="fas" :class="{ 'fa-plus': !this.show, 'fa-minus': this.show}"></i></h2>
+        <transition name=fade>
+            <form v-show="show" @submit.prevent="addAdvert">
+              <label for="">Tytuł: </label>
+              <input type="text" placeholder="advertisement" v-model="newAdvert.title" required><br>
+              <label for="">Minimalna stawka: </label>
+              <input type="number" v-model="newAdvert.minSalary" min="0" required><br>
+              <label for="">Maksymalna stawka: </label>
+              <input type="number" v-model="newAdvert.maxSalary" min="0" required><br>
+              <label for="">Opis zadania: </label>
+              <textarea placeholder="Description" v-model="newAdvert.description" rows="4" cols="50"></textarea><br>
+              <button class="advert">add advertisement</button>
+            </form>
+        </transition>
     </div>
 </template>
 
@@ -28,7 +30,8 @@ export default {
                 maxSalary: 10000,
                 description: ''
             },
-            show: false
+            show: false,
+            h2Text: this.show ? `Rezygnuję z dodawania` : `Dodaj Ogłoszenie`
         }
     },
     methods: {
@@ -42,12 +45,16 @@ export default {
             this.newAdvert.minSalary = 0,
             this.newAdvert.maxSalary = 0,
             this.newAdvert.description = ''
-        },
-        toggleShow() {
-            const showNot = !(this.show);
-            this.show = showNot;
         }
     }
 }
 </script>
 
+<style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .8s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
+</style>

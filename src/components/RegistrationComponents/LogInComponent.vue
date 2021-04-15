@@ -10,6 +10,7 @@
 
 <script>
 export default {
+    props: ['users'],
     data() {
         return {
             login: ''
@@ -17,11 +18,15 @@ export default {
     },
     methods: {
         logIn() {
-            const atPosition = this.login.indexOf('@');
-            const userName = this.login.slice(0, atPosition);
+            // if (this.users.indexOf( el => el == this.login)){
+            if (this.users[0].login == this.login){
+
+                const atPosition = this.login.indexOf('@');
+            const nick = this.login.slice(0, atPosition);
             this.login = '';
-            this.$router.push('/')
-            alert(`Nice to see you again, ${userName}`)
+            this.$router.push('/') // odsyła na wskazany rout
+            alert(`Nice to see you again, ${nick}`)
+            }
         }
     }
 }

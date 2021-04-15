@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <AddAdvertisementForm @newAdvertAdded="addAdvert" display="none" />
+    <AddAdvertisementForm @newAdvertAdded="addAdvert" />
     <AdvertItem class="nav-elem" v-for="advert in adverts" :key="advert.id" :advert="advert" @onAdvertClosed="closeAdvert" />
     <MainComponent :closed="closed" :pending="pending" />
   </div>
