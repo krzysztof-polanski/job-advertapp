@@ -18,15 +18,27 @@ export default {
     },
     methods: {
         logIn() {
-            // if (this.users.indexOf( el => el == this.login)){
-            if (this.users[0].login == this.login){
-
-                const atPosition = this.login.indexOf('@');
-            const nick = this.login.slice(0, atPosition);
-            this.login = '';
-            this.$router.push('/') // odsyła na wskazany rout
-            alert(`Nice to see you again, ${nick}`)
+            let isInDB = false;
+            let nick;
+            for ( const user of this.users ) {
+                for ( const [key, value] of Object.entries(user) ) {
+                    if(`${key}: ${value}` == `login: ${this.login}`) {
+                        const atPosition = this.login.indexOf('@');
+                        nick = this.login.slice(0, atPosition);
+                        isInDB = true;
+                    }
+                }
             }
+            
+            if (isInDB) {
+                console.log('YOU ARE LOGGED IN, pkp!');
+                this.$router.push('/') // odsyła na wskazany rout
+                alert(`Nice to see you, ${nick}`)
+            } else {
+                alert(`We do not have ${this.login} in our list of registered users!`)
+            }
+            this.login = '';
+            this.$emit('logIn');
         }
     }
 }

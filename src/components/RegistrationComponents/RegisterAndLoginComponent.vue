@@ -1,14 +1,14 @@
 <template>
     <div>
         <Nav @isItMainPage="setCurrentPage" />
-        <Register v-show="currentPage == 1" />
-        <LogIn v-show="currentPage == 2" :users="users" />  
+        <Register v-show="currentPage == 1" @register="addNewUser" />
+        <LogIn v-show="currentPage == 2" :users="users" @logIn="userLogged" />  
     </div>
 </template>
 
 <script>
 
-import Nav from '../NavigationComponents/NavBarComponent.vue'
+import Nav from '../NavigationComponents/NavBarComponent.vue';
 import Register from './RegisterComponent.vue';
 import LogIn from './LogInComponent.vue';
 
@@ -21,14 +21,33 @@ export default {
     data() {
         return {
             users: [
-                {login: 'adeal66@w.w', name: 'Adeal', lastName: 'Loreal', nick: 'adeal66'}
+                {login: 'adeal66@w.w', name: 'Adeal', lastName: 'Loreal', nick: 'adeal66', id: 1}
             ],
-            currentPage: 1
+            currentPage: 1,
+            
+        }
+    },
+    computed: {
+        newId() {
+            return this.users.length + 1
         }
     },
     methods: {
         setCurrentPage(id) {
             this.currentPage = id
+        },
+        addNewUser(newUser) {
+            this.users.push({
+                login: newUser.newUserLogin,
+                name: newUser.newUserName,
+                lastName: newUser.newUserLastName,
+                nick: newUser.newUserNick,
+                id: this.newId
+            });
+            this.currentPage = 2;
+        },
+        userLogged() {
+            this.currentPage = 1;
         }
     }
 }

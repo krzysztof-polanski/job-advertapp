@@ -2,11 +2,11 @@
     <div>
         <form @submit.prevent="register">
             <label for="login">Login:</label>
-            <input type="email" name="login" id="" placeholder="twój email" v-model="login">
+            <input type="email" name="login" id="" placeholder="twój email" v-model="newUser.newUserLogin">
             <label for="user-name">Imię:</label>
-            <input type="text" name="user-name" id="" placeholder="twoje imię" v-model="userName">
+            <input type="text" name="user-name" id="" placeholder="twoje imię" v-model="newUser.newUserName">
             <label for="user-last-name">Nazwisko:</label>
-            <input type="text" name="user-last-name" id="" placeholder="twoje nazwisko" v-model="userLastName">
+            <input type="text" name="user-last-name" id="" placeholder="twoje nazwisko" v-model="newUser.newUserLastName">
             <button>Zarejestruj się</button>
         </form>
     </div>
@@ -16,24 +16,28 @@
 export default {
     data() {
         return {
-            login: '',
-            userName: '',
-            userLastName: '',
-            users: [
-                // {login: 'adeal66@w.w', name: 'Adeal', lastName: 'Loreal', nick: 'adeal66'}
-                'adeal66@w.w'
-            ]
+            newUser: {
+                newUserLogin: '',
+                newUserName: '',
+                newUserLastName: '',
+                newUserNick: ''
+            }
         }
     },
     methods: {
         register() {
-            const atPosition = this.login.indexOf('@');
-            const nick = this.login.slice(0, atPosition);
-            this.login = '';
-            this.userName = '';
-            this.userLastName = '';
-            this.$router.push('/registration/login')
-            alert(`Nice to meet you, ${nick}`)
+            const atIndex = this.newUser.newUserLogin.indexOf('@');
+            this.newUser.newUserNick = this.newUser.newUserLogin.slice(0, atIndex);
+            this.$emit('register', this.newUser)
+            alert(`Nice to meet you, ${this.newUser.newUserNick}`)
+            this.clearForm();
+            // this.$router.push('/registration/login'); // przenosi do routu logowania - brak routu
+        },
+        clearForm() {
+            this.newUser.newUserLogin = '';
+            this.newUser.newUserName = '';
+            this.newUser.newUserLastName = '';
+            this.newUser.newUserNick = ''
         }
     }
 }
