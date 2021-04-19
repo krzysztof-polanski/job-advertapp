@@ -12,6 +12,12 @@ const routes = [
     component: Advertisements
   },
   {
+    path: '/logged',
+    name: 'LoggedIn',
+    component: Advertisements,
+    props: true
+  },
+  {
     path: '/registration',
     name: 'Registration',
     // route level code-splitting

@@ -31,8 +31,10 @@ export default {
                 description: ''
             },
             show: false,
-            h2Text: this.show ? `Rezygnuję z dodawania` : `Dodaj Ogłoszenie`
         }
+    },
+    computed: {
+        h2Text() { return this.show ? `Rezygnuję z dodawania` : `Dodaj Ogłoszenie` }
     },
     methods: {
         addAdvert() {
@@ -45,6 +47,9 @@ export default {
             this.newAdvert.minSalary = 0,
             this.newAdvert.maxSalary = 0,
             this.newAdvert.description = ''
+        },
+        toggleShow() {
+            this.show = false
         }
     }
 }
@@ -56,5 +61,14 @@ export default {
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
+    }
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
     }
 </style>

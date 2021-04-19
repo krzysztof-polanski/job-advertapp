@@ -2,13 +2,54 @@
 
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Ogłoszenia</router-link> |
-      <router-link to="/registration">Zarejestruj/Zaloguj się</router-link>
-    </div>
-    <keep-alive><router-view/></keep-alive>
+    <MainNav :isLoggedIn="loggedUser.isLoggedIn" @logOut="logOut" />
+    <h2 v-if="loggedUser.name">{{loggedUser.name}}</h2>
+    <keep-alive><router-view /></keep-alive>
   </div>
 </template>
+
+<script>
+
+import MainNav from './components/NavigationComponents/MainNavComponent';
+import { EventBus } from './event-bus';
+// import LogInComponent from './components/RegistrationComponents/LogInComponent'
+
+export default {
+  components: {
+    MainNav,
+  },
+  data() {
+    return {
+      loggedUser: {name: '', isLoggedIn: false},
+    }
+  },
+  computed: {
+ 
+  },
+  mounted() {
+    let user = this.loggedUser
+    EventBus.$on('logIn', function (login) {
+      console.log(user.name + ' is loggedUser before')
+      user.name = login;
+      user.isLoggedIn = true;
+      console.log(login)
+      // console.log(this.data)
+      return user
+    });
+    console.log(user.name)
+    this.loggedUser = user
+  },
+  methods: {
+    logOut() {
+      console.log('click catched')
+      this.loggedUser.name = ''
+      this.loggedUser.isLoggedIn = false
+    }
+    
+  }
+  
+}
+</script>
 
 <style>
 

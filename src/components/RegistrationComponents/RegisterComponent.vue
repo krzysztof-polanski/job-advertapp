@@ -7,7 +7,7 @@
             <input type="text" name="user-name" id="" placeholder="twoje imię" v-model="newUser.newUserName">
             <label for="user-last-name">Nazwisko:</label>
             <input type="text" name="user-last-name" id="" placeholder="twoje nazwisko" v-model="newUser.newUserLastName">
-            <button>Zarejestruj się</button>
+            <input type="submit">
         </form>
     </div>
 </template>

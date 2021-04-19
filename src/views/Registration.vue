@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <RegAndLog />
+    <RegAndLog @userLogged="userLogged" />
   </div>
 </template>
 
@@ -12,6 +12,11 @@ import RegAndLog from '../components/RegistrationComponents/RegisterAndLoginComp
 export default ({
   components: {
     RegAndLog
+  },
+  methods: {
+    userLogged() {
+      this.$emit('userLogged')
+    }
   }
 })
 </script>

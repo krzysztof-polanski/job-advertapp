@@ -3,12 +3,15 @@
         <form @submit.prevent="logIn">
             <label for="login">Login:</label>
             <input type="email" name="login" id="" placeholder="your email" v-model="login">
-            <button>Log In</button>
+            <input type="submit">
         </form>
     </div>
 </template>
 
 <script>
+
+import { EventBus } from '../../event-bus';
+
 export default {
     props: ['users'],
     data() {
@@ -32,12 +35,15 @@ export default {
             
             if (isInDB) {
                 console.log('YOU ARE LOGGED IN, pkp!');
-                this.$router.push('/') // odsyła na wskazany rout
+                this.$router.push({ name:'LoggedIn', params: {login: this.login} }) // odsyła na wskazany rout
                 alert(`Nice to see you, ${nick}`)
             } else {
                 alert(`We do not have ${this.login} in our list of registered users!`)
             }
+            EventBus.$emit('logIn', this.login);
             this.login = '';
+
+
             this.$emit('logIn');
         }
     }

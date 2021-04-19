@@ -48,7 +48,21 @@ export default {
         },
         userLogged() {
             this.currentPage = 1;
+            this.$emit('userLogged')
         }
     }
 }
 </script>
+
+<style>
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: blueviolet;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+</style>
