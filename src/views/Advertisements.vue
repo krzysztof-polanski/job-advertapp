@@ -2,8 +2,8 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <h1>Job Advertisements App</h1>
-    <AdvertApp />
-    <h2>{{displayLogin}}</h2>
+    <AdvertApp :login="login" />
+    <h2>{{ displayLogin }}</h2>
   </div>
 </template>
 

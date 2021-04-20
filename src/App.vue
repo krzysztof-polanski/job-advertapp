@@ -3,7 +3,7 @@
 <template>
   <div id="app">
     <MainNav :isLoggedIn="loggedUser.isLoggedIn" @logOut="logOut" />
-    <h2 v-if="loggedUser.name">{{loggedUser.name}}</h2>
+    <h2 v-if="loggedUser.name">{{ loggedUser.name }}</h2>
     <keep-alive><router-view /></keep-alive>
   </div>
 </template>
@@ -29,14 +29,11 @@ export default {
   mounted() {
     let user = this.loggedUser
     EventBus.$on('logIn', function (login) {
-      console.log(user.name + ' is loggedUser before')
       user.name = login;
       user.isLoggedIn = true;
-      console.log(login)
-      // console.log(this.data)
+      console.log(login);
       return user
     });
-    console.log(user.name)
     this.loggedUser = user
   },
   methods: {
