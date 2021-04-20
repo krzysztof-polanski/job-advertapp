@@ -2,7 +2,7 @@
     <div>
         <form @submit.prevent="logIn">
             <label for="login">Login:</label>
-            <input type="email" name="login" id="" placeholder="your email" v-model="login">
+            <input type="email" name="login" id="" placeholder="your email" v-model="login" ref="login" >
             <input type="submit">
         </form>
     </div>
@@ -13,10 +13,15 @@
 import { EventBus } from '../../event-bus';
 
 export default {
-    props: ['users'],
+    props: ['users', 'currentPage'],
     data() {
         return {
             login: ''
+        }
+    },
+    computed: {
+        fakeRender() {
+            return this.currentPage
         }
     },
     methods: {
@@ -45,6 +50,14 @@ export default {
 
 
             this.$emit('logIn');
+        }
+    },
+    watch: {
+        $route () {
+            this.$refs.login.focus();
+        },
+        fakeRender: function() {
+            this.$refs.login.focus();
         }
     }
 }

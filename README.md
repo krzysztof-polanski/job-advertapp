@@ -1,4 +1,4 @@
-# hello-world
+# Advert App
 
 ## Project setup
 ```

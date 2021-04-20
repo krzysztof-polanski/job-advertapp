@@ -12,7 +12,6 @@
 
 import MainNav from './components/NavigationComponents/MainNavComponent';
 import { EventBus } from './event-bus';
-// import LogInComponent from './components/RegistrationComponents/LogInComponent'
 
 export default {
   components: {

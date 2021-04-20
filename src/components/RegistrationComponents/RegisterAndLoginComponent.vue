@@ -1,8 +1,8 @@
 <template>
     <div>
         <Nav @isItMainPage="setCurrentPage" />
-        <Register v-show="currentPage == 1" @register="addNewUser" />
-        <LogIn v-show="currentPage == 2" :users="users" @logIn="userLogged" />  
+        <Register v-show="currentPage == 1" @register="addNewUser" :currentPage="currentPage === 1 ? currentPage : 0" />
+        <LogIn v-show="currentPage == 2" :users="users" @logIn="userLogged" :currentPage="currentPage === 2 ? currentPage : 0" />  
     </div>
 </template>
 
@@ -49,6 +49,11 @@ export default {
         userLogged() {
             this.currentPage = 1;
             this.$emit('userLogged')
+        }
+    },
+    watch: {
+        $route () {
+            this.currentPage = 1;
         }
     }
 }
