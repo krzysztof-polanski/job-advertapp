@@ -11,9 +11,9 @@
 
 <script>
 
-import AdvertItem from './AdvertComponents/AdvertItem.vue'
-import MainComponent from './MainComponent.vue'
-import AddAdvertisementForm from './AdvertComponents/AddAdvertisementFormComponent.vue'
+import AdvertItem from './AdvertItem.vue'
+import MainComponent from '../MainComponent.vue'
+import AddAdvertisementForm from './AddAdvertisementFormComponent.vue'
 
 export default {
     components: {
@@ -60,7 +60,7 @@ export default {
   .advert {
     color: olive;
     border: 1px solid blueviolet;
-    margin: 20px 10px;
+    margin: 20px 0px;
     padding: 20px;
   }
   .completed {

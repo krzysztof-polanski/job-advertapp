@@ -55,10 +55,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 60%;
+  margin: 0 auto;
 }
 
 #nav {
   padding: 30px;
+  border-bottom: 1px solid #42b983;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: fantasy;
+  letter-spacing: 3px;
+  font-size: 2.5vh;
 }
 
 #nav a {

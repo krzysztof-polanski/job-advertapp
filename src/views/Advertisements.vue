@@ -9,7 +9,7 @@
 
 <script>
 // @ is an alias to /src
-import Advert from '../components/AdvertApp'
+import Advert from '../components/AdvertComponents/AdvertApp'
 
 export default {
   props: ['login'],
