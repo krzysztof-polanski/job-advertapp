@@ -23,7 +23,7 @@ export default {
         height: 100px;
         padding: 20px;
         margin: 20px;
-        border: 2px solid lightseagreen;
+        border: 2px solid black;
         text-align: center;
         vertical-align: middle;
     }

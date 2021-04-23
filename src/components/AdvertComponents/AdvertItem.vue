@@ -1,5 +1,5 @@
 <template>
-    <div class="advert" :class="{ completed: advert.completed }">
+    <div class="advert dark-gold" :class="{ completed: advert.completed }">
         <h2>{{ advert.title }}</h2>
         <p>Completed: {{ advert.completed }}</p>
         <h3>Salary: ${{ advert.salaryRange }}</h3>

@@ -54,14 +54,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #231F20;
   width: 60%;
   margin: 0 auto;
 }
 
-#nav {
+#nav, .nav-container {
   padding: 30px;
-  border-bottom: 1px solid #42b983;
+  border-bottom: 1px solid #8E793E;
   text-transform: uppercase;
   text-decoration: none;
   font-family: fantasy;
@@ -69,13 +69,26 @@ export default {
   font-size: 2.5vh;
 }
 
-#nav a {
+#nav a, .nav-elem {
   font-weight: bold;
-  color: #2c3e50;
+  color: #231F20;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #8E793E;
+}
+
+.dark-gold {
+  color: #8E793E
+}
+.light-gold {
+  color: #AD974F
+}
+.intellectual-grey {
+  color: #231F20
+}
+.light-grey {
+  color: #EAEAEA
 }
 
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'

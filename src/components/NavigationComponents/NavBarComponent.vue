@@ -1,7 +1,7 @@
 <template>
 
     <div class="nav-container">
-        <NavElement class="nav-elem" v-for="nav in navs" :key="nav.id" :nav="nav" @isMainPage='isItMainPage' />
+        <NavElement class="nav-elem" v-for="nav in navs" :key="nav.id" :nav="nav" @isMainPage="isItMainPage" :class="{ selected: CurrentPage === nav.id }" />
         <!-- <PageTitle v-if="!MainPage" :CurrentPage="CurrentPage" /> -->
     </div>
 
@@ -38,17 +38,11 @@ export default {
 </script>
 
 <style>
-    .nav-elem {
-        text-transform: uppercase;
-        text-decoration: none;
-        font-family: fantasy;
-        /* display: inline-block; */
-        padding: 20px;
-        letter-spacing: 3px;
-        font-size: 2vh;
-    }
     .nav-container {
-        padding: 20px;
-        border-bottom: 2px solid purple;
+        border: none
+    }
+
+    .selected {
+    color: #8E793E;
     }
 </style>

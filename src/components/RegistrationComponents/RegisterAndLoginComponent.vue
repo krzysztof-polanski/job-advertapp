@@ -61,7 +61,7 @@ export default {
 
 <style>
     input[type=button], input[type=submit], input[type=reset] {
-        background-color: blueviolet;
+        background-color: #8E793E;
         border: none;
         color: white;
         padding: 16px 32px;

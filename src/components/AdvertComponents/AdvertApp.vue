@@ -58,8 +58,8 @@ export default {
 
 <style>
   .advert {
-    color: olive;
-    border: 1px solid blueviolet;
+    /* color: olive; */
+    border: 7px solid #231F20;
     margin: 20px 0px;
     padding: 20px;
   }

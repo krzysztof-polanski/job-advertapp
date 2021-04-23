@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="dark-gold">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <h1>Job Advertisements App</h1>
     <AdvertApp :login="login" />
