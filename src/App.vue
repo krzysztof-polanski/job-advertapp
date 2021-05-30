@@ -49,7 +49,7 @@ export default {
 
 <style>
 
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -76,7 +76,7 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #8E793E;
-}
+} */
 
 .dark-gold {
   color: #8E793E
@@ -90,7 +90,7 @@ export default {
 .light-grey {
   color: #EAEAEA
 }
-
+@import './assets/styles/style.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'
 
 </style>

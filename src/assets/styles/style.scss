@@ -1,0 +1,41 @@
+@use './variables' as var;
+
+
+
+form {
+    background-color: var.$primaryColor;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: var.$secondarySupportColor;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#nav {
+    @extend .nav-container;
+    a {
+        font-weight: bold;
+        color: var.$secondarySupportColor;
+    };
+    a.router-link-exact-active {
+        color: var.$primaryColor;
+    }
+}
+
+.nav-container {
+    @include var.nav-style(none);
+}
+
+.nav-elem {
+    font-weight: bold;
+    color: var.$secondarySupportColor;
+}
+
+// #nav a.router-link-exact-active {
+//     color: $primaryColor;
+// }
