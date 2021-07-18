@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Nav @isItMainPage="setCurrentPage" />
+        <Nav @isItMainPage="setCurrentPage" :currentPage="currentPage" />
         <Register v-show="currentPage == 1" @register="addNewUser" :currentPage="currentPage === 1 ? currentPage : 0" />
-        <LogIn v-show="currentPage == 2" :users="users" @logIn="userLogged" :currentPage="currentPage === 2 ? currentPage : 0" />  
+        <LogIn v-show="currentPage == 2" :users="users" @logIn="userLogged" :currentPage="currentPage === 2 ? currentPage : 0" /> 
     </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
     computed: {
         newId() {
             return this.users.length + 1
-        }
+        },
     },
     methods: {
         setCurrentPage(id) {
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style>
-    input[type=button], input[type=submit], input[type=reset] {
+    /* input[type=button], input[type=submit], input[type=reset] {
         background-color: #8E793E;
         border: none;
         color: white;
@@ -68,6 +68,6 @@ export default {
         text-decoration: none;
         margin: 4px 2px;
         cursor: pointer;
-    }
+    } */
 
 </style>

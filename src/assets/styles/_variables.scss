@@ -1,17 +1,25 @@
-$primaryColor : #8E793E;
+$primaryColor : #072F5F;
+// $primaryColor : #8E793E;
 
-$secondaryColor : #AD974F;
+$secondaryColor : #1261A0;
+// $secondaryColor : #AD974F;
 
-$primarySupportColor : #231F20;
+$primarySupportColor : #3895D3;
+// $primarySupportColor : #231F20;
 
-$secondarySupportColor : #EAEAEA;
+$secondarySupportColor : #58CCED;
+// $secondarySupportColor : #EAEAEA;
+
+$mainFont : 'Encode Sans SC', sans-serif;
+
+$backupFont : 'EB Garamond', serif;
 
 @mixin nav-style($textDecoration) {
     padding: 30px;
     border-bottom: 1px solid $primaryColor;
     text-transform: uppercase;
     text-decoration: $textDecoration;
-    font-family: fantasy;
+    font-family: $mainFont;
     letter-spacing: 3px;
-    font-size: 2.5vh;
+    font-size: 1.1vw;
 }

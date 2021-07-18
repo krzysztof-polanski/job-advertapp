@@ -2,18 +2,18 @@
 
 <template>
     <div class="advert nav-elem">
-        <h2 @click="show = !show" class="advert">{{ h2Text }} <i class="fas" :class="{ 'fa-plus': !this.show, 'fa-minus': this.show}"></i></h2>
+        <h2 @click="show = !show" class="advert">{{ h2Text }} <i class="fas" :class="{ 'fa-plus': !this.show, 'fa-minus': this.show }"></i></h2>
         <transition name=fade>
-            <form v-show="show" @submit.prevent="addAdvert">
-              <label for="">Tytuł: </label>
-              <input type="text" placeholder="advertisement" v-model="newAdvert.title" required><br>
-              <label for="">Minimalna stawka: </label>
-              <input type="number" v-model="newAdvert.minSalary" min="0" required><br>
-              <label for="">Maksymalna stawka: </label>
-              <input type="number" v-model="newAdvert.maxSalary" min="0" required><br>
-              <label for="">Opis zadania: </label>
-              <textarea placeholder="Description" v-model="newAdvert.description" rows="4" cols="50"></textarea><br>
-              <button class="advert">add advertisement</button>
+            <form class="form form--advert" v-show="show" @submit.prevent="addAdvert">
+              <label class="form__label" for="new-advert-title">Tytuł: </label>
+              <input class="form__input" type="text" placeholder="advertisement" v-model="newAdvert.title" id="new-advert-title" required><br>
+              <label class="form__label" for="new-advert-min-salary">Minimalna stawka: </label>
+              <input class="form__input" type="number" v-model="newAdvert.minSalary" min="0" id="new-advert-min-salary" required><br>
+              <label class="form__label" for="new-advert-max-salary">Maksymalna stawka: </label>
+              <input class="form__input" type="number" v-model="newAdvert.maxSalary" min="0" id="new-advert-max-salary" required><br>
+              <label class="form__label" for="new-advert-description">Opis zadania: </label>
+              <textarea class="form__textarea" placeholder="Description" v-model="newAdvert.description" rows="4" cols="50" id="new-advert-description"></textarea><br>
+              <button class="btn btn--submit form__button">add advertisement</button>
             </form>
         </transition>
     </div>
@@ -62,7 +62,7 @@ export default {
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
     }
-    input[type=button], input[type=submit], input[type=reset] {
+    /* input[type=button], input[type=submit], input[type=reset] {
         background-color: #4CAF50;
         border: none;
         color: white;
@@ -70,5 +70,6 @@ export default {
         text-decoration: none;
         margin: 4px 2px;
         cursor: pointer;
-    }
+    } */
+    /* @import '../../assets/styles/style.css'; */
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div class="dark-gold">
+  <div class="advert__body">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <h1>Job Advertisements App</h1>
     <AdvertApp :login="login" />
-    <h2>{{ displayLogin }}</h2>
+    <!-- <h2>{{ displayLogin }}</h2> -->
   </div>
 </template>
 

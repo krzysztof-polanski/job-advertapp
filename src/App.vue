@@ -1,11 +1,11 @@
 
 
 <template>
-  <div id="app">
+  <nav id="app">
     <MainNav :isLoggedIn="loggedUser.isLoggedIn" @logOut="logOut" />
     <h2 v-if="loggedUser.name">{{ loggedUser.name }}</h2>
     <keep-alive><router-view /></keep-alive>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -78,7 +78,7 @@ export default {
   color: #8E793E;
 } */
 
-.dark-gold {
+/* .dark-gold {
   color: #8E793E
 }
 .light-gold {
@@ -89,8 +89,11 @@ export default {
 }
 .light-grey {
   color: #EAEAEA
-}
+} */
 @import './assets/styles/style.css';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'
+/* @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
+@import 'https://fonts.googleapis.com';
+@import 'https://fonts.gstatic.com'; */
+@import 'https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Encode+Sans+SC:wght@300;700&display=swap';
 
 </style>

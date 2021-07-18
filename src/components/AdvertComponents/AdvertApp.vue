@@ -2,9 +2,9 @@
 
 
 <template>
-  <div>
+  <div class="adverts__container">
     <AddAdvertisementForm v-if="login" @newAdvertAdded="addAdvert" />
-    <AdvertItem class="nav-elem" v-for="advert in adverts" :key="advert.id" :advert="advert" :login="login" @onAdvertClosed="closeAdvert" />
+    <AdvertItem class="advert-item" v-for="advert in adverts" :key="advert.id" :advert="advert" :login="login" @onAdvertClosed="closeAdvert" />
     <MainComponent :closed="closed" :pending="pending" />
   </div>
 </template>
@@ -57,8 +57,8 @@ export default {
 </script>
 
 <style>
-  .advert {
-    /* color: olive; */
+  /* .advert {
+    color: olive;
     border: 7px solid #231F20;
     margin: 20px 0px;
     padding: 20px;
@@ -71,8 +71,9 @@ export default {
         text-transform: uppercase;
         text-decoration: none;
         font-family: fantasy;
-        /* display: inline-block; */
+        display: inline-block;
         padding: 10px;
         letter-spacing: 3px;
-    }
+    } */
+    /* @import '../../assets/styles/style.css'; */
 </style>

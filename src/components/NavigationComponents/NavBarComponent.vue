@@ -1,8 +1,8 @@
 <template>
 
-    <div class="nav-container">
-        <NavElement class="nav-elem" v-for="nav in navs" :key="nav.id" :nav="nav" @isMainPage="isItMainPage" :class="{ selected: CurrentPage === nav.id }" />
-        <!-- <PageTitle v-if="!MainPage" :CurrentPage="CurrentPage" /> -->
+    <div class="nav registration__smallNav">
+        <NavElement class="nav-elem" v-for="nav in navs" :key="nav.id" :nav="nav" @isMainPage="isItMainPage" :class="{ selected: currentPage === nav.id }" />
+        <!-- <PageTitle v-if="!MainPage" :currentPage="currentPage" /> -->
     </div>
 
 </template>
@@ -13,6 +13,7 @@ import NavElement from './NavElementComponent.vue'
 // import PageTitle from './PageTitleComponent.vue'
 
 export default {
+    props: ['currentPage'],
     components: {
         NavElement,
         // PageTitle
@@ -24,25 +25,25 @@ export default {
                 {name: 'Zaloguj się', href: '#', id: 2}
             ],
             // MainPage: false,
-            CurrentPage: 1
+            curPage: this.currentPage
         }
     },
     methods: {
         isItMainPage(id) {
             let index = this.navs.findIndex(el => el.id === id);
-            this.CurrentPage = this.navs[index].id
-            this.$emit('isItMainPage', this.CurrentPage)
+            this.curPage = this.navs[index].id
+            this.$emit('isItMainPage', this.curPage)
         }
     }
 }
 </script>
 
 <style>
-    .nav-container {
+    /* .registration__smallNav {
         border: none
-    }
+    } */
 
-    .selected {
+    /* .selected {
     color: #8E793E;
-    }
+    } */
 </style>

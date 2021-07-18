@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="mainComponent__boxes-container">
         <h2 class="closed-box">Do zrobienia: {{ pending }}</h2>
         <h2 class="closed-box" @click="colorBG">Zrobione: {{ closed }}</h2>
     </div>
@@ -19,16 +19,18 @@ export default {
 
 <style>
     .closed-box {
-        width: 100px;
+        width: 40%;
         height: 100px;
+        line-height: 100px;
         padding: 20px;
         margin: 20px;
         border: 2px solid black;
         text-align: center;
         vertical-align: middle;
     }
-    .container {
+    .mainComponent__boxes-container {
+        width: 100%;
         display: flex;
-        justify-content: baseline;
+        justify-content: space-around;
     }
 </style>

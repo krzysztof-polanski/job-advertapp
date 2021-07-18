@@ -1,5 +1,5 @@
 <template>
-        <a @click='isMainPage' :href="nav.href"  :class="{ selected: CurrentPage === nav.id }">{{ nav.name }}</a>
+        <a @click='isMainPage' :href="nav.href">{{ nav.name }}</a>
 </template>
 
 
