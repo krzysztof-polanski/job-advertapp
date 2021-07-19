@@ -1,7 +1,7 @@
 <template>
     <div class="mainComponent__boxes-container">
-        <h2 class="closed-box">Do zrobienia: {{ pending }}</h2>
-        <h2 class="closed-box" @click="colorBG">Zrobione: {{ closed }}</h2>
+        <h2 class="closed-box">Aktywne oferty: {{ pending }}</h2>
+        <h2 class="closed-box" @click="colorBG">Zamknięte oferty: {{ closed }}</h2>
     </div>
 </template>
 

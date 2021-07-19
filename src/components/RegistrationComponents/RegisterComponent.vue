@@ -1,13 +1,13 @@
 <template>
     <div>
         <form @submit.prevent="register">
-            <label for="login">Login:</label>
-            <input type="email" name="login" id="" placeholder="twój email" v-model="newUser.newUserLogin" ref="newUserLogin">
-            <label for="user-name">Imię:</label>
-            <input type="text" name="user-name" id="" placeholder="twoje imię" v-model="newUser.newUserName">
-            <label for="user-last-name">Nazwisko:</label>
-            <input type="text" name="user-last-name" id="" placeholder="twoje nazwisko" v-model="newUser.newUserLastName">
-            <input type="submit">
+            <label for="login"><span class="form__span--required">*</span>Login:</label>
+            <input type="email" name="login" id="" placeholder="twój email" v-model="newUser.newUserLogin" ref="newUserLogin" required>
+            <label for="user-name"><span class="form__span--required">*</span>Imię:</label>
+            <input type="text" name="user-name" id="" placeholder="twoje imię" v-model="newUser.newUserName" required>
+            <label for="user-last-name"><span class="form__span--required">*</span>Nazwisko:</label>
+            <input type="text" name="user-last-name" id="" placeholder="twoje nazwisko" v-model="newUser.newUserLastName" required>
+            <input class="form__submit" type="submit" value="Register">
         </form>
     </div>
 </template>

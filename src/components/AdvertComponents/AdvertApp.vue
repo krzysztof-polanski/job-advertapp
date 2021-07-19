@@ -25,8 +25,8 @@ export default {
   data() {
     return {
       adverts: [
-        { title: 'Zrobić zakupy', salaryRange: '500-5000', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dolore est similique vel ipsam ipsa libero tempore cum hic error ducimus numquam voluptatum deleniti soluta?', completed: false, publishedBy: 'w@w.w', id: 1},
-        { title: 'Czekać na żonę', salaryRange: '1000-25000', description: 'BLABLABLA', completed: false, publishedBy: 'adeal66@w.w', id: 2}
+        { title: 'Programista front-end', salaryRange: '500-5000', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dolore est similique vel ipsam ipsa libero tempore cum hic error ducimus numquam voluptatum deleniti soluta?srvtvhdtryjtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtdvyjtyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyv', completed: false, publishedBy: 'w@w.w', id: 1, logo: "https://www.logodesign.net/logo/building-on-crescent-4303ld.png?size=2&industry=company"},
+        { title: 'Programista backend', salaryRange: '1000-25000', description: 'BLABLABLA', completed: false, publishedBy: 'adeal66@w.w', id: 2, logo: "https://i.pinimg.com/originals/00/08/fd/0008fd13f2b8d824dcc428fa24d71f39.png"}
       ],
       newId: 3,
       pending: 2,

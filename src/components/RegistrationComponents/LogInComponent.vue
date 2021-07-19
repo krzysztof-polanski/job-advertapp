@@ -1,9 +1,9 @@
 <template>
     <div>
         <form @submit.prevent="logIn">
-            <label for="login">Login:</label>
+            <label for="login"><span class="form__span--required">*</span>Login:</label>
             <input type="email" name="login" id="" placeholder="your email" v-model="login" ref="login" >
-            <input type="submit">
+            <input class="form__submit" type="submit" value="Log In">
         </form>
     </div>
 </template>

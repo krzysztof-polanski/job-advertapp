@@ -16,7 +16,7 @@ $backupFont : 'EB Garamond', serif;
 
 @mixin nav-style($textDecoration) {
     padding: 30px;
-    border-bottom: 1px solid $primaryColor;
+    // border-bottom: 1px solid $primaryColor;
     text-transform: uppercase;
     text-decoration: $textDecoration;
     font-family: $mainFont;
