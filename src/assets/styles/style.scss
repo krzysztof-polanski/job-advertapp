@@ -30,40 +30,53 @@ body {
     color: var.$primarySupportColor;
     width: 100vw;
     margin: 0 auto;
-    border: 1px solid blueviolet;
 }
 
 .nav {
     @extend .registration__smallNav;
-    
+    // .main-nav__a-wrapper {
+    //     display: inline-block;
+    //     height: 100%;
+    //     padding-top: 30px;
+    //     padding-bottom: 30px;
+    // };
     a {
         font-weight: bold;
-        color: var.$primarySupportColor;
-        opacity: 0.4;
+        color: var.$secondaryColor;
+        // opacity: 0.4;
+        display: inline-block;
+        height: 100%;
+        padding: 30px 10px;
     };
-    a.router-link-exact-active {
-        color: var.$primaryColor;
-        opacity: 1.0;
+    a:hover {
+        // color: var.$primaryColor;
+        opacity: 0.5;
     }
+    a.router-link-exact-active {
+        color: #FFF;
+        opacity: 1.0;
+        background-color: var.$secondaryColor;
+        border-radius: 0px 20px 0 20px;
+    };
+    a.router-link-exact-active:hover {
+        color: #FFF;
+        cursor: default;
+    }
+    
+    
 }
 .app__main-nav {
     text-align: right;
-    border-bottom: 7px solid var.$primaryColor;
-}
-.registration__smallNav {
-    @include var.nav-style(none);
+    
 }
 
-.nav-elem {
-    font-weight: bold;
-    color: var.$secondaryColor;
-    padding: 10px;
-}
 .advert__body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 2px solid var.$secondaryColor;
+    box-sizing: border-box;
     h1 {
         margin: 30px auto;
         font-size: 1.5vw;
@@ -146,10 +159,24 @@ body {
 // #nav a.router-link-exact-active {
 //     color: $primaryColor;
 // }
+.registration__smallNav {
+    @include var.nav-style(none);
+}
+
+.nav-elem {
+    font-weight: bold;
+    font-size: small;
+    color: var.$secondaryColor;
+    padding: 10px;
+    
+}
 .selected {
     color: var.$primaryColor !important;
     opacity: 1.0 !important;
+    display: none !important;
+    // border: 2px solid var.$primaryColor !important;
 }
+
 input {
     border: none;
     border-bottom: 1px solid red;

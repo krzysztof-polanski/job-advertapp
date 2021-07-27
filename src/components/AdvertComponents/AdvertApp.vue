@@ -41,7 +41,8 @@ export default {
         description: newAdvert.description,
         completed: false,
         publishedBy: this.login,
-        id: this.newId
+        id: this.newId,
+        logo: newAdvert.logo
       });
       this.newId += 1;
       this.pending += 1

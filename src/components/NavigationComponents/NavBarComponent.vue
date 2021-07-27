@@ -22,7 +22,7 @@ export default {
         return {
             navs: [
                 {name: 'Zarejestruj się', href: '#', id: 1},
-                {name: 'Zaloguj się', href: '#', id: 2}
+                {name: 'Masz już konto? Zaloguj się', href: '#', id: 2}
             ],
             // MainPage: false,
             curPage: this.currentPage

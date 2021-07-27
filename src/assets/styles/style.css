@@ -24,37 +24,31 @@ body {
   color: #3895D3;
   width: 100vw;
   margin: 0 auto;
-  border: 1px solid blueviolet;
 }
 
 .nav a {
   font-weight: bold;
-  color: #3895D3;
-  opacity: 0.4;
+  color: #1261A0;
+  display: inline-block;
+  height: 100%;
+  padding: 30px 10px;
+}
+.nav a:hover {
+  opacity: 0.5;
 }
 .nav a.router-link-exact-active {
-  color: #072F5F;
+  color: #FFF;
   opacity: 1;
+  background-color: #1261A0;
+  border-radius: 0px 20px 0 20px;
+}
+.nav a.router-link-exact-active:hover {
+  color: #FFF;
+  cursor: default;
 }
 
 .app__main-nav {
   text-align: right;
-  border-bottom: 7px solid #072F5F;
-}
-
-.registration__smallNav, .nav {
-  padding: 30px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-family: "Encode Sans SC", sans-serif;
-  letter-spacing: 3px;
-  font-size: 1.1vw;
-}
-
-.nav-elem {
-  font-weight: bold;
-  color: #1261A0;
-  padding: 10px;
 }
 
 .advert__body {
@@ -62,6 +56,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid #1261A0;
+  box-sizing: border-box;
 }
 .advert__body h1 {
   margin: 30px auto;
@@ -134,9 +130,26 @@ body {
   opacity: 0;
 }
 
+.registration__smallNav, .nav {
+  padding: 0 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Encode Sans SC", sans-serif;
+  letter-spacing: 3px;
+  font-size: 1.1vw;
+}
+
+.nav-elem {
+  font-weight: bold;
+  font-size: small;
+  color: #1261A0;
+  padding: 10px;
+}
+
 .selected {
   color: #072F5F !important;
   opacity: 1 !important;
+  display: none !important;
 }
 
 input {

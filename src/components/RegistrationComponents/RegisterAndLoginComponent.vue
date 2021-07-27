@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Nav @isItMainPage="setCurrentPage" :currentPage="currentPage" />
         <Register v-show="currentPage == 1" @register="addNewUser" :currentPage="currentPage === 1 ? currentPage : 0" />
         <LogIn v-show="currentPage == 2" :users="users" @logIn="userLogged" :currentPage="currentPage === 2 ? currentPage : 0" /> 
+        <Nav @isItMainPage="setCurrentPage" :currentPage="currentPage" />
     </div>
 </template>
 

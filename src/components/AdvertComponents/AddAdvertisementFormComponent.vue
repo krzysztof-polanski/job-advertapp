@@ -13,6 +13,8 @@
               <input class="form__input" type="number" v-model="newAdvert.maxSalary" min="0" id="new-advert-max-salary" required><br>
               <label class="form__label" for="new-advert-description">Opis zadania: </label>
               <textarea class="form__textarea" placeholder="Description" v-model="newAdvert.description" rows="4" cols="50" id="new-advert-description"></textarea><br>
+              <label for="new-advert-company-logo">Logo firmy:</label>
+              <input type="text" name="company_logo" id="new-advert-company-logo" placeholder="adres url logo firmy" v-model="newAdvert.logo"><br>
               <button class="btn btn--submit form__button">add advertisement</button>
             </form>
         </transition>
@@ -28,7 +30,8 @@ export default {
                 title: '',
                 minSalary: 2000,
                 maxSalary: 10000,
-                description: ''
+                description: '',
+                logo: 'https://www.uidownload.com/files/239/730/324/technology-company-logo-template.jpg'
             },
             show: false,
         }
@@ -46,7 +49,8 @@ export default {
             this.newAdvert.title = '',
             this.newAdvert.minSalary = 0,
             this.newAdvert.maxSalary = 0,
-            this.newAdvert.description = ''
+            this.newAdvert.description = '',
+            this.newAdvert.logo = ''
         },
         toggleShow() {
             this.show = false

@@ -1,5 +1,5 @@
 <template>
-    <div class="advert dark-gold" :class="{ completed: advert.completed }">
+    <div class="advert" :class="{ completed: advert.completed }">
         <div class="advert__img-container"><img class="advert__img" :src="advert.logo" alt="advert image"></div>
         <div class="advert__text">
             <h2>{{ advert.title }}</h2>
